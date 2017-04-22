@@ -69,7 +69,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BoostAmountIncrement.cs" />
+    <Compile Include="Assets\BoostStrengthIncrement.cs" />
     <Compile Include="Assets\WorldBuilder.cs" />
+    <Compile Include="Assets\pickUps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.CrossPlatformInput;
 
 namespace UnityStandardAssets.Characters.FirstPerson
@@ -120,14 +121,47 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
         public int boostNum = 1;
-        int boostleft;
-        public float boostAmount = 10f;
+        int _boostLeft;
+        float _boostAmount = 10f;
+
+        public Text boostLftText;
+        public Text boostStrText;
+
+
+        public int boostLeft
+        {
+            get
+            {
+                return _boostLeft;
+            }
+            set
+            {
+                boostLftText.text = "Boosts left: " + value.ToString();
+                _boostLeft = value;
+            }
+        }
+
+        public float boostAmount
+        {
+            get
+            {
+                return _boostAmount;
+            }
+            set
+            {
+                boostStrText.text = "Boost strength:" + value.ToString();
+                _boostAmount = value;
+            }
+        }
+
         private void Start()
         {
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
             mouseLook.Init(transform, cam.transform);
-            boostleft = boostNum;
+            boostLeft = boostNum;
+            boostAmount = _boostAmount;
+
         }
 
 
@@ -138,6 +172,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
             {
                 m_Jump = true;
+            }
+
+            if (Input.GetMouseButtonDown(0) && boostLeft > 0)
+            {
+                m_RigidBody.velocity = Camera.main.transform.forward * boostAmount;
+                boostLeft--;
+
             }
 
         }
@@ -166,8 +207,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             if (m_IsGrounded)
             {
-                if (boostleft != boostNum)
-                    boostleft = boostNum;
+                if (boostLeft != boostNum)
+                    boostLeft = boostNum;
 
                 m_RigidBody.drag = 5f;
 
@@ -194,11 +235,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             m_Jump = false;
 
-            if (Input.GetMouseButtonDown(0) && boostleft > 0)
-            {
-                m_RigidBody.velocity = Camera.main.transform.forward * boostAmount;
-                boostleft--;
-            }
+           
         }
 
 
