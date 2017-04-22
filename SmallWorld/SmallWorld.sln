@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallWorld.Plugins", "SmallWorld.Plugins.csproj", "{767BAFDF-B4E8-57E0-FADE-E55609824919}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallWorld", "SmallWorld.csproj", "{196D2EB4-E232-3E98-911B-13D39610F472}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallWorld.Editor", "SmallWorld.Editor.csproj", "{45A0EF40-C1C2-3B7A-F4E5-7107EFF902F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{767BAFDF-B4E8-57E0-FADE-E55609824919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{767BAFDF-B4E8-57E0-FADE-E55609824919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{767BAFDF-B4E8-57E0-FADE-E55609824919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{767BAFDF-B4E8-57E0-FADE-E55609824919}.Release|Any CPU.Build.0 = Release|Any CPU
+		{196D2EB4-E232-3E98-911B-13D39610F472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{196D2EB4-E232-3E98-911B-13D39610F472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{196D2EB4-E232-3E98-911B-13D39610F472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{196D2EB4-E232-3E98-911B-13D39610F472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45A0EF40-C1C2-3B7A-F4E5-7107EFF902F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45A0EF40-C1C2-3B7A-F4E5-7107EFF902F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45A0EF40-C1C2-3B7A-F4E5-7107EFF902F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45A0EF40-C1C2-3B7A-F4E5-7107EFF902F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
