@@ -12,31 +12,41 @@ public class Person : MonoBehaviour
     public Color normal;
     public Renderer mat;
 
+    public bool activated = true;
 
     void OnMouseOver()
     {
 
-        if (Input.GetMouseButtonDown(1))
+        if (activated && Input.GetMouseButtonDown(1))
         {
             if (theif)
             {
-              WorldBuilder.thisBuilder.EndGame();
+                WorldBuilder.thisBuilder.EndGame();
             }
             else
             {
-                StartCoroutine(WorldBuilder.thisBuilder.ShowDialog(5f, "Nope. Was not me."));
+                StartCoroutine(WorldBuilder.thisBuilder.ShowDialog(5f, "Nope. Was not me. Gotta go!"));
+                Invoke("destroySelf", 6f);
+                activated = false;
+
             }
         }
     }
 
+    void destroySelf()
+    {
+        Destroy(gameObject);
+    }
     void OnMouseEnter()
     {
-        mat.material.color = Color.red;
+        if (activated)
+            mat.material.color = Color.red;
     }
 
     void OnMouseExit()
     {
-        mat.material.color = normal;
+        if (activated)
+            mat.material.color = normal;
     }
 
 }

@@ -12,17 +12,11 @@ public class HintPlanet : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        hintType = Random.Range(0, 1);
+        hintType = Random.Range(0, 2);
         hintText.text = "Hover over screen to reveal hint";
-   
-    }
 
-    void OnMouseEnter()
-    {
-        if (theif == null)
-        {
-            theif = WorldBuilder.thisBuilder.theif;
-        }
+        theif = WorldBuilder.thisBuilder.theif;
+
         switch (hintType)
         {
             case 0:
@@ -38,4 +32,6 @@ public class HintPlanet : MonoBehaviour
                 break;
         }
     }
+
+
 }

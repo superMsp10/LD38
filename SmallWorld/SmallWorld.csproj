@@ -73,6 +73,7 @@
     <Compile Include="Assets\BoostStrengthIncrement.cs" />
     <Compile Include="Assets\HintPlanet.cs" />
     <Compile Include="Assets\Person.cs" />
+    <Compile Include="Assets\StartingPlanet.cs" />
     <Compile Include="Assets\Teleporter.cs" />
     <Compile Include="Assets\WorldBuilder.cs" />
     <Compile Include="Assets\pickUps.cs" />

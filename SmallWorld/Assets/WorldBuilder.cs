@@ -26,6 +26,8 @@ public class WorldBuilder : MonoBehaviour
     public Color endColor;
     public Color originalColor;
 
+    public StartingPlanet planet;
+
     /*List of colours and hex values taken from:
              
         +-----------------------------------------------------------------+
@@ -1663,7 +1665,9 @@ public class WorldBuilder : MonoBehaviour
         theif.theif = true;
         hextoColour.TryGetValue(ColorUtility.ToHtmlStringRGB(theif.normal), out theif.colourName);
 
+        planet.startAnimation();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -1692,7 +1696,7 @@ public class WorldBuilder : MonoBehaviour
 
     public void EndGame()
     {
-        StartCoroutine(ShowDialog(10f, "You found me. Its a small world we live in..."));
+        StartCoroutine(ShowDialog(10f, "You found me. Its a small world we live in...\nYOU WON!!"));
         Invoke("relodScene", 11f);
     }
 
