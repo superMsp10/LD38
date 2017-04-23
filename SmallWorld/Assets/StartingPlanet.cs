@@ -10,6 +10,8 @@ public class StartingPlanet : MonoBehaviour
     Transform theifOrgTrans;
     Person theif;
 
+    public GameObject instructions;
+
     public WorldBuilder thisBuilder;
 
     public void EndAnimation()
@@ -26,10 +28,13 @@ public class StartingPlanet : MonoBehaviour
         thisBuilder.dialog.text = "";
         thisBuilder.player.SetActive(true);
 
+        instructions.SetActive(true);
+
     }
 
     public void startAnimation()
     {
+        instructions.SetActive(false);
 
         theif = thisBuilder.theif.GetComponent<Person>();
         theif.activated = false;
