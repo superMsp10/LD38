@@ -27,6 +27,9 @@ public class WorldBuilder : MonoBehaviour
     public Color originalColor;
 
     public StartingPlanet planet;
+    public GameObject music;
+
+    public int hintNumber = 0;
 
     /*List of colours and hex values taken from:
              
@@ -1611,6 +1614,14 @@ public class WorldBuilder : MonoBehaviour
 
     void Awake()
     {
+        if (FindObjectsOfType<AudioSource>().Length > 1)
+        {
+            Destroy(music);
+        }
+        else
+        {
+            DontDestroyOnLoad(music);
+        }
         thisBuilder = this;
     }
 
@@ -1648,7 +1659,7 @@ public class WorldBuilder : MonoBehaviour
                 planetType = "Normal planet";
             }
 
-            if (Random.Range(0, 3) == 2)
+            if (Random.Range(0, 10) == 2)
             {
                 GameObject p = (GameObject)Instantiate(peopleTypes[Random.Range(0, peopleTypes.Length)], new Vector3(spawnPos.x, spawnPos.y + 1f, spawnPos.z + 3f), Quaternion.identity, g.transform);
                 Person per = p.GetComponent<Person>();
@@ -1696,7 +1707,7 @@ public class WorldBuilder : MonoBehaviour
 
     public void EndGame()
     {
-        StartCoroutine(ShowDialog(10f, "You found me. Its a small world we live in...\nYOU WON!!"));
+        StartCoroutine(ShowDialog(10f, "You found me. It must be a small world we live in...\nYOU WON!!"));
         Invoke("relodScene", 11f);
     }
 

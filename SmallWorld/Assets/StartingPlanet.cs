@@ -14,6 +14,8 @@ public class StartingPlanet : MonoBehaviour
 
     public WorldBuilder thisBuilder;
 
+    public GameObject hud;
+
     public void EndAnimation()
     {
         animator.enabled = false;
@@ -29,11 +31,18 @@ public class StartingPlanet : MonoBehaviour
         thisBuilder.player.SetActive(true);
 
         instructions.SetActive(true);
-
+        hud.SetActive(true);
     }
 
     public void startAnimation()
     {
+
+        Invoke("_startAnimation", 0.5f);
+    }
+
+    void _startAnimation()
+    {
+
         instructions.SetActive(false);
 
         theif = thisBuilder.theif.GetComponent<Person>();
