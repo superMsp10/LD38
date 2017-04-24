@@ -1659,7 +1659,7 @@ public class WorldBuilder : MonoBehaviour
                 planetType = "Normal planet";
             }
 
-            if (Random.Range(0, 10) == 2)
+            if (Random.Range(0, 6) == 2)
             {
                 GameObject p = (GameObject)Instantiate(peopleTypes[Random.Range(0, peopleTypes.Length)], new Vector3(spawnPos.x, spawnPos.y + 1f, spawnPos.z + 3f), Quaternion.identity, g.transform);
                 Person per = p.GetComponent<Person>();
